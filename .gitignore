@@ -1,0 +1,6 @@
+spring*/
+crm*.zip
+soapui.log
+.metadata/
+/.recommenders/
+gatling*
