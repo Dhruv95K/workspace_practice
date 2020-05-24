@@ -4,3 +4,4 @@ soapui.log
 .metadata/
 /.recommenders/
 gatling*
+code-spring*
