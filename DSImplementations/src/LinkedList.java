@@ -1,38 +1,53 @@
 
-class ListNode {
-	int val;
-	ListNode next;
+public class LinkedList <T> {
 
-	public ListNode(int val) {
-		this.val = val;
-		next = null;
+	class ListNode {
+		T val;
+		ListNode next;
+		
+		public ListNode() {
+			next = null;
+		}
+		
+		public ListNode(T val) {
+			this.val = val;
+			next = null;
+		}
+
+	}
+	
+	private ListNode head;
+	private int size ;
+
+	public ListNode getHead() {
+		return head;
 	}
 
-	public ListNode() {
-
+	public int getSize() {
+		return size;
 	}
-}
 
-public class LinkedList {
-
-	ListNode head;
+	public void setSize(int size) {
+		this.size = size;
+	}
 
 	public LinkedList() {
 		head = null;
+		size = 0;
 	}
 
-	public int get(int index) {
+	public T get(int index) {
 		ListNode cur = head;
 		while (index-- > 0) {
 			cur = cur.next;
 			if (cur == null)
-				return -1;
+				return null;
 		}
 
 		return cur.val;
 	}
 
-	public void addAtHead(int val) {
+	public void addAtHead(T val) {
 		if (head == null) {
 			head = new ListNode(val);
 			return;
@@ -41,22 +56,30 @@ public class LinkedList {
 		ListNode newNode = new ListNode(val);
 		newNode.next = head;
 		head = newNode;
+		size++;
 	}
 
-	public void addAtTail(int val) {
+	public void addAtTail(T val) {
+		if(head == null) {
+			addAtHead(val);
+			return;
+		}
 		ListNode cur = head;
 		while (cur.next != null) {
 			cur = cur.next;
 		}
 		ListNode newNode = new ListNode(val);
 		cur.next = newNode;
-		newNode.next = null;
+		size++;
+	//	newNode.next = null;
 	}
 
-	public void addAtIndex(int index, int val) {
+	public void addAtIndex(int index, T val) {
 		ListNode newNode = new ListNode(val);
-		if(index == 0)
+		if(index == 0) {
 			addAtHead(val);
+			return;
+		}
 		
 		ListNode cur = head;
 		while (index-- > 1) {
@@ -67,11 +90,19 @@ public class LinkedList {
 
 		newNode.next = cur.next;
 		cur.next = newNode;
+		size++;
+	}
+	
+	public void deleteAtHead() {
+		if(head == null)
+			return ;
+		head = head.next;
+		size--;
 	}
 
 	public void deleteAtIndex(int index) {
 		if(index == 0){
-            head = head.next;
+			deleteAtHead();
             return;
         }
 		ListNode cur = head;
@@ -81,13 +112,32 @@ public class LinkedList {
 				return;
 		}
 		
-		if(cur.next != null)
+		if(cur.next != null) {
 			cur.next = cur.next.next;
+			size--;
+		}
+	}
+	
+	public boolean isEmpty() {
+		return size == 0;
+	}
+	
+	public void printList() {
+		ListNode cur = head;
+		while(cur != null) {
+			System.out.print(cur.val + " ");
+			cur = cur.next;
+		}
+		
+		System.out.println("");
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		LinkedList<String> list1 = new LinkedList<String>();
+		list1.addAtHead("Dhruv");
+		list1.addAtTail("Parth");
+		list1.addAtIndex(2, "Kaju");
+		list1.printList();
 	}
 
 }

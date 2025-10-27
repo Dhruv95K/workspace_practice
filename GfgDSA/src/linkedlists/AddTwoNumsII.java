@@ -1,7 +1,5 @@
 package linkedlists;
 
-import javax.xml.soap.Node;
-
 public class AddTwoNumsII {
 	class node {
 		int val;

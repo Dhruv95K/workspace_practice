@@ -59,6 +59,36 @@ public class CheckCompletenessOfABinaryTree958 {
 		return false;
 			
 	}
+	
+	public boolean isCompleteTree2(TreeNode root) {
+		if(root == null)
+			return true;
+		Queue<TreeNode> q = new LinkedList<>();
+		q.offer(root);
+		boolean flag = false;  //found first non fill node
+		
+		while (!q.isEmpty()) {
+			TreeNode t = q.poll();
+			if(t.left != null) {
+				if(flag == true)
+						return false;
+				q.offer(t.left);
+			}
+			else
+				flag = true;
+			
+			if(t.right != null) {
+				if(flag == true)
+						return false;
+				q.offer(t.right);
+			}
+			else
+				flag = true;
+		}
+		
+		return true;
+			
+	}
 
 }
 
