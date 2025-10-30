@@ -3,7 +3,7 @@ package Trees;
 import java.util.Stack;
 
 /*
-1130. Minimum Cost Tree From Leaf Values
+1130. Minimum Cost Tree From Leaf Values2
 
 Given an array arr of positive integers, consider all binary trees such that:
 

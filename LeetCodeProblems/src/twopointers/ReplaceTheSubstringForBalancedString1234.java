@@ -59,5 +59,6 @@ public class ReplaceTheSubstringForBalancedString1234 {
 		int balance = s.length()/4;
 		
 		int ans = 0;
+		return 0;
 	}
 }

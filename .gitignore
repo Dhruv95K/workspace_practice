@@ -5,3 +5,11 @@ soapui.log
 /.recommenders/
 gatling*
 code-spring*
+/out/
+/bin/
+/target/
+.idea/
+*.iml
+*.class
+*.log
+*/.project

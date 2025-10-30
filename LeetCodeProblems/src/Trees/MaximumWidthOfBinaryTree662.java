@@ -70,13 +70,13 @@ public class MaximumWidthOfBinaryTree662 {
 	}
 
 	public int widthOfBinaryTree(TreeNode root) {
-		Values val = new Values();
+		Values2 val = new Values2();
 		widthOfBinaryTree(root, 0, val);
 		
 		return Math.abs(val.max - val.min);
 	}
 
-	private void widthOfBinaryTree(TreeNode root, int hd, Values val) {
+	private void widthOfBinaryTree(TreeNode root, int hd, Values2 val) {
 		if (root == null)
 			return;
 

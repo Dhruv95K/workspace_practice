@@ -1,4 +1,4 @@
-/* IMPORTANT: Multiple classes and nested static classes are supported */
+package src.hiringContests.JusPayFeb;/* IMPORTANT: Multiple classes and nested static classes are supported */
 
 
 import java.io.*;
@@ -91,26 +91,26 @@ class Reachability {
         return -1;
     }
     
-      public static boolean bfs(Node start,Node end,Map<Integer,Node> map){
-        Set<Node> visited = new HashSet();
-        visited.add(start);
-        Queue<Node> q = new LinkedList<>();
-        q.add(start);
-        
-        while(!q.isEmpty()){
-            Node t = q.poll();
-            if(t == end)
-                return true;
-            
-            for(int id : t.nodes){
-                Node neighbour = map.get(id);
-                if(!visited.contains(neighbour)){
-                    visited.add(neighbour);
-                    q.add(neighbour);
-                }
-            }    
-        }
-        
-        return visited.contains(end);
-    }
+//      public static boolean bfs(Node start,Node end,Map<Integer,Node> map){
+//        Set<Node> visited = new HashSet();
+//        visited.add(start);
+//        Queue<Node> q = new LinkedList<>();
+//        q.add(start);
+//
+//        while(!q.isEmpty()){
+//            Node t = q.poll();
+//            if(t == end)
+//                return true;
+//
+//            for(int id : t.nodes){
+//                Node neighbour = map.get(id);
+//                if(!visited.contains(neighbour)){
+//                    visited.add(neighbour);
+//                    q.add(neighbour);
+//                }
+//            }
+//        }
+//
+//        return visited.contains(end);
+//    }
 }

@@ -54,19 +54,19 @@ public class VerticalWidthOfABinaryTree {
 
 }
 
-class Values{
+class Values2 {
 	int min=Integer.MAX_VALUE,max = Integer.MIN_VALUE;
 }
 
 class VerticalWidth {
 	public static int verticalWidth(Node root) {
-		Values v = new Values();
+		Values2 v = new Values2();
 		verticalWidth(root,v,0);
 		
 		return v.max - v.min + 1;
 	}
 
-	private static void verticalWidth(Node root, Values v, int hd) {
+	private static void verticalWidth(Node root, Values2 v, int hd) {
 		if(root == null)
 			return ;
 		
